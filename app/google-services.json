@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "346102660794",
+    "firebase_url": "https://ykwebmart-io.firebaseio.com",
+    "project_id": "ykwebmart-io",
+    "storage_bucket": "ykwebmart-io.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346102660794:android:cee85ee13c565209f50c83",
+        "android_client_info": {
+          "package_name": "com.android.webmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346102660794-rk37og8nouvvff6kcft5c47aln3qmfsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaXI-M0iMk5woGWGV3tTJ-6HTwKd1p2fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346102660794-rk37og8nouvvff6kcft5c47aln3qmfsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
