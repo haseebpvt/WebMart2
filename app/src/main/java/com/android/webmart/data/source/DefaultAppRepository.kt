@@ -16,6 +16,11 @@ class DefaultAppRepository @Inject constructor(
     @RemoteAppDataSourceAnnotation private val remoteAppDataSource: AppDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppRepository {
+
+    override fun test(): String {
+        return "hello"
+    }
+
     override suspend fun getHomeBanners(): Result<List<Banner>> {
         TODO("Not yet implemented")
     }

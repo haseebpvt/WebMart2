@@ -9,6 +9,11 @@ import com.android.webmart.data.model.Product
 interface AppRepository {
 
     /**
+     * Test method which simply return the String 'hello'
+     */
+    fun test(): String
+
+    /**
      * Get main banner
      * Primary use case in Home screen
      */
