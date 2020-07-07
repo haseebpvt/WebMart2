@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_order"
         android:name="com.android.webmart.ui.order.OrderFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_order"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.android.webmart.ui.saving.SavingFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_saving"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
