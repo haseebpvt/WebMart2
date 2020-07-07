@@ -9,8 +9,9 @@ import com.android.webmart.data.model.Product
 import com.android.webmart.data.source.AppDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class LocalAppDataSource constructor(
+class LocalAppDataSource @Inject constructor(
     private val dao: AppDao,
     private val preferences: SharedPreferences,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO

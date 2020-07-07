@@ -9,8 +9,9 @@ import com.android.webmart.data.source.AppDataSource
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class RemoteAppDataSource constructor(
+class RemoteAppDataSource @Inject constructor(
     private val firestore: FirebaseFirestore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppDataSource {

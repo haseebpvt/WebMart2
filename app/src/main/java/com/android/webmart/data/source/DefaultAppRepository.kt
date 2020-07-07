@@ -9,8 +9,9 @@ import com.android.webmart.di.LocalAppDataSourceAnnotation
 import com.android.webmart.di.RemoteAppDataSourceAnnotation
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class DefaultAppRepository constructor(
+class DefaultAppRepository @Inject constructor(
     @LocalAppDataSourceAnnotation private val localAppDataSource: AppDataSource,
     @RemoteAppDataSourceAnnotation private val remoteAppDataSource: AppDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
