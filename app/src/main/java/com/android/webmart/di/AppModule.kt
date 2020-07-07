@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
 import com.android.webmart.data.source.AppDataSource
+import com.android.webmart.data.source.AppRepository
+import com.android.webmart.data.source.DefaultAppRepository
 import com.android.webmart.data.source.local.AppDao
 import com.android.webmart.data.source.local.AppDatabase
 import com.android.webmart.data.source.local.LocalAppDataSource
@@ -28,6 +30,20 @@ annotation class RemoteAppDataSourceAnnotation
 @InstallIn(ApplicationComponent::class)
 @Module
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideAppRepository(
+        @LocalAppDataSourceAnnotation localAppDataSource: AppDataSource,
+        @RemoteAppDataSourceAnnotation remoteAppDataSource: AppDataSource,
+        dispatcher: CoroutineDispatcher
+    ): AppRepository {
+        return DefaultAppRepository(
+            localAppDataSource,
+            remoteAppDataSource,
+            dispatcher
+        )
+    }
 
     @LocalAppDataSourceAnnotation
     @Singleton
