@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 class LocalAppDataSource constructor(
     private val dao: AppDao,
     private val preferences: SharedPreferences,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppDataSource {
     override suspend fun getHomeBanners(): Result<List<Banner>> {
         TODO("Not yet implemented")

@@ -6,9 +6,13 @@ import com.android.webmart.data.model.Category
 import com.android.webmart.data.model.Hotel
 import com.android.webmart.data.model.Product
 import com.android.webmart.data.source.AppDataSource
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
 class RemoteAppDataSource constructor(
-
+    private val firestore: FirebaseFirestore,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppDataSource {
     override suspend fun getHomeBanners(): Result<List<Banner>> {
         TODO("Not yet implemented")

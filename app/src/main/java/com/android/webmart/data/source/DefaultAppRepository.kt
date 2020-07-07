@@ -5,12 +5,14 @@ import com.android.webmart.data.model.Banner
 import com.android.webmart.data.model.Category
 import com.android.webmart.data.model.Hotel
 import com.android.webmart.data.model.Product
+import com.android.webmart.di.LocalAppDataSourceAnnotation
+import com.android.webmart.di.RemoteAppDataSourceAnnotation
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 class DefaultAppRepository constructor(
-    private val localAppDataSource: AppDataSource,
-    private val remoteAppDataSource: AppDataSource,
+    @LocalAppDataSourceAnnotation private val localAppDataSource: AppDataSource,
+    @RemoteAppDataSourceAnnotation private val remoteAppDataSource: AppDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppRepository {
     override suspend fun getHomeBanners(): Result<List<Banner>> {
