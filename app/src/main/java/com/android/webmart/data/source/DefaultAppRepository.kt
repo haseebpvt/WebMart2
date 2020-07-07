@@ -5,9 +5,13 @@ import com.android.webmart.data.model.Banner
 import com.android.webmart.data.model.Category
 import com.android.webmart.data.model.Hotel
 import com.android.webmart.data.model.Product
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
 class DefaultAppRepository constructor(
-
+    private val localAppDataSource: AppDataSource,
+    private val remoteAppDataSource: AppDataSource,
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : AppRepository {
     override suspend fun getHomeBanners(): Result<List<Banner>> {
         TODO("Not yet implemented")
