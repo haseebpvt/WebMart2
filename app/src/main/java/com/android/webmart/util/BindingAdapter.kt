@@ -9,3 +9,12 @@ import com.bumptech.glide.Glide
 fun loadImageFromUrl(imageView: ImageView, link: String) {
     Glide.with(imageView).load(link).into(imageView)
 }
+
+@BindingAdapter("customGridSpacing")
+fun gridRecyclerViewSpacing(
+    view: RecyclerView,
+    space: Int
+) {
+    val spaceInPixel = convertDpToPixel(space)
+    view.addItemDecoration(SpaceItemDecoration(3, spaceInPixel, true))
+}

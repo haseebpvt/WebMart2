@@ -23,12 +23,3 @@ fun categoryItems(
         submitList(list)
     }
 }
-
-@BindingAdapter("customGridSpacing")
-fun gridRecyclerViewSpacing(
-    view: RecyclerView,
-    space: Int
-) {
-    val spaceInPixel = convertDpToPixel(space)
-    view.addItemDecoration(SpaceItemDecoration(3, spaceInPixel, true))
-}
