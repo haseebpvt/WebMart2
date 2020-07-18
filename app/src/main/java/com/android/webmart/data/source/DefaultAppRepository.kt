@@ -8,6 +8,7 @@ import com.android.webmart.data.model.Product
 import com.android.webmart.di.LocalAppDataSourceAnnotation
 import com.android.webmart.di.RemoteAppDataSourceAnnotation
 import com.android.webmart.util.fakedata.getFakeCategoryList
+import com.android.webmart.util.fakedata.getFakeHotelList
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
@@ -31,7 +32,7 @@ class DefaultAppRepository @Inject constructor(
     }
 
     override suspend fun getTopHotelsAndRestaurants(): Result<List<Hotel>> {
-        TODO("Not yet implemented")
+        return Result.Success(getFakeHotelList())
     }
 
     override suspend fun getTopProducts(): Result<List<Product>> {

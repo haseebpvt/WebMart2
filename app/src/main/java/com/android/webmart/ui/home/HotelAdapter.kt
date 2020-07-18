@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.webmart.BR
 import com.android.webmart.R
 import com.android.webmart.data.model.Hotel
-import com.android.webmart.databinding.ItemHotelBinding
+import com.android.webmart.databinding.ItemHotelViewBinding
 
 class HotelAdapter(private val viewModel: HomeViewModel) :
     ListAdapter<Hotel, HotelViewModel>(HotelDiffUtil()) {
@@ -24,14 +24,10 @@ class HotelAdapter(private val viewModel: HomeViewModel) :
     override fun onBindViewHolder(holder: HotelViewModel, position: Int) {
         holder.bind(viewModel, getItem(position))
     }
-
-    override fun getItemViewType(position: Int): Int {
-        return R.layout.item_hotel
-    }
 }
 
 class HotelViewModel(
-    private val binding: ItemHotelBinding
+    private val binding: ItemHotelViewBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(viewModel: HomeViewModel, hotel: Hotel) {
         binding.viewmodel = viewModel
