@@ -66,9 +66,9 @@
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
         android:id="@+id/elegantNumberButton"
-        android:layout_width="50dp"
-        android:layout_height="20dp"
-        app:backGroundColor="#00BCD4"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        app:backGroundColor="#f2f2f2"
         app:finalNumber="99"
         app:initialNumber="0"
         app:layout_constraintBottom_toBottomOf="parent"
