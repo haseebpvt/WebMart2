@@ -1,5 +1,6 @@
 package com.android.webmart.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,4 +28,11 @@ class HomeViewModel @Inject constructor(
         }
     }
     val categoryList: LiveData<List<Category>> = _categoryList
+
+    /**
+     * Called by Data Binding
+     */
+    fun openCategory(id: Int) {
+
+    }
 }

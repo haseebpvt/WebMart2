@@ -7,12 +7,16 @@ import com.android.webmart.util.SpaceItemDecoration
 import com.android.webmart.util.convertDpToPixel
 
 
-@BindingAdapter("categoryItems")
-fun categoryItems(recyclerView: RecyclerView, list: List<Category>) {
+@BindingAdapter(value = ["categoryItems", "viewModel"], requireAll = true)
+fun categoryItems(
+    recyclerView: RecyclerView,
+    list: List<Category>,
+    viewModel: HomeViewModel
+) {
     list ?: return
 
     if (recyclerView.adapter == null) {
-        recyclerView.adapter = CategoryAdapter()
+        recyclerView.adapter = CategoryAdapter(viewModel)
     }
 
     (recyclerView.adapter as CategoryAdapter).apply {

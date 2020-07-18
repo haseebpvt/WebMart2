@@ -1,7 +1,6 @@
 package com.android.webmart.ui.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -11,8 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.webmart.BR
 import com.android.webmart.R
 import com.android.webmart.data.model.Category
+import com.android.webmart.databinding.ItemHomeCategoryBinding
 
-class CategoryAdapter : ListAdapter<Category, CategoryViewHolder>(CategoryDiffUtil()) {
+class CategoryAdapter(private val viewModel: HomeViewModel) :
+    ListAdapter<Category, CategoryViewHolder>(CategoryDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder(
@@ -21,7 +22,7 @@ class CategoryAdapter : ListAdapter<Category, CategoryViewHolder>(CategoryDiffUt
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(viewModel, getItem(position))
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -30,9 +31,10 @@ class CategoryAdapter : ListAdapter<Category, CategoryViewHolder>(CategoryDiffUt
 }
 
 class CategoryViewHolder(
-    private val binding: ViewDataBinding
+    private val binding: ItemHomeCategoryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(category: Category) {
+    fun bind(viewModel: HomeViewModel, category: Category) {
+        binding.viewmodel = viewModel
         binding.setVariable(BR.category, category)
         binding.executePendingBindings()
     }

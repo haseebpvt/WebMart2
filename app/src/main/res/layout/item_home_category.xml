@@ -6,6 +6,10 @@
         <variable
             name="category"
             type="com.android.webmart.data.model.Category" />
+
+        <variable
+            name="viewmodel"
+            type="com.android.webmart.ui.home.HomeViewModel" />
     </data>
 
     <LinearLayout
@@ -14,6 +18,7 @@
         android:background="@drawable/category_item_background"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> viewmodel.openCategory(category.id)}"
         android:orientation="vertical">
 
         <ImageView

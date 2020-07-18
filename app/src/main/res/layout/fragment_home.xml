@@ -18,6 +18,7 @@
         <androidx.recyclerview.widget.RecyclerView
             categoryItems="@{viewmodel.categoryList}"
             customGridSpacing="@{10}"
+            viewModel="@{viewmodel}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
