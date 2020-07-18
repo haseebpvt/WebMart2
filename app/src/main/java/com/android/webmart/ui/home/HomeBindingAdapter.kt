@@ -3,6 +3,7 @@ package com.android.webmart.ui.home
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.webmart.data.model.Category
+import com.android.webmart.data.model.Hotel
 import com.android.webmart.util.SpaceItemDecoration
 import com.android.webmart.util.convertDpToPixel
 
@@ -20,6 +21,21 @@ fun categoryItems(
     }
 
     (recyclerView.adapter as CategoryAdapter).apply {
+        submitList(list)
+    }
+}
+
+@BindingAdapter(value = ["hotelItems", "viewModel"], requireAll = true)
+fun hotelItems(
+    recyclerView: RecyclerView,
+    list: List<Hotel>,
+    viewModel: HomeViewModel
+) {
+    if (recyclerView.adapter == null) {
+        recyclerView.adapter = HotelAdapter(viewModel)
+    }
+
+    (recyclerView.adapter as HotelAdapter).apply {
         submitList(list)
     }
 }

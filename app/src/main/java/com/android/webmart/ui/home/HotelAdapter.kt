@@ -24,6 +24,10 @@ class HotelAdapter(private val viewModel: HomeViewModel) :
     override fun onBindViewHolder(holder: HotelViewModel, position: Int) {
         holder.bind(viewModel, getItem(position))
     }
+
+    override fun getItemViewType(position: Int): Int {
+        return R.layout.item_hotel_view
+    }
 }
 
 class HotelViewModel(
