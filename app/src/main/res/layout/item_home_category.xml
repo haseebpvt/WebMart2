@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
-<!--        <variable-->
-<!--            name="category"-->
-<!--            type="com.android.webmart.data.model.Category" />-->
+        <variable
+            name="category"
+            type="com.android.webmart.data.model.Category" />
+
+        <variable
+            name="eventListener"
+            type="com.android.webmart.ui.home.HomeEventListener" />
     </data>
 
     <LinearLayout
@@ -15,6 +18,7 @@
         android:background="@drawable/category_item_background"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> eventListener.openCategoryProduct(category.id)}"
         android:orientation="vertical">
 
         <ImageView

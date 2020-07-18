@@ -8,10 +8,24 @@ import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
     private val repository: AppRepository
-) : ViewModel() {
+) : ViewModel(),
+    HomeEventListener {
 
     private val _text = MutableLiveData<String>().apply {
         value = repository.test()
     }
     val text: LiveData<String> = _text
+
+    override fun openCategoryProduct(categoryId: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun openHotelDetails() {
+        TODO("Not yet implemented")
+    }
+}
+
+interface HomeEventListener {
+    fun openCategoryProduct(categoryId: Int)
+    fun openHotelDetails()
 }
