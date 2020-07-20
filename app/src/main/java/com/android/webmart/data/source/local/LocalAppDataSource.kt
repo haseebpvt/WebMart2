@@ -2,10 +2,7 @@ package com.android.webmart.data.source.local
 
 import android.content.SharedPreferences
 import com.android.webmart.data.Result
-import com.android.webmart.data.model.Banner
-import com.android.webmart.data.model.Category
-import com.android.webmart.data.model.Hotel
-import com.android.webmart.data.model.Product
+import com.android.webmart.data.model.*
 import com.android.webmart.data.source.AppDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -29,6 +26,10 @@ class LocalAppDataSource @Inject constructor(
     }
 
     override suspend fun getTopProducts(): Result<List<Product>> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getFoodListFromHotel(hotelId: String): Result<List<Food>> {
         TODO("Not yet implemented")
     }
 }

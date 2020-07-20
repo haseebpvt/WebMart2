@@ -1,10 +1,7 @@
 package com.android.webmart.data.source
 
 import com.android.webmart.data.Result
-import com.android.webmart.data.model.Banner
-import com.android.webmart.data.model.Category
-import com.android.webmart.data.model.Hotel
-import com.android.webmart.data.model.Product
+import com.android.webmart.data.model.*
 
 interface AppRepository {
 
@@ -36,4 +33,9 @@ interface AppRepository {
      * Primary use case in Home screen
      */
     suspend fun getTopProducts(): Result<List<Product>>
+
+    /**
+     * Get all food from given hotel ID
+     */
+    suspend fun getFoodListFromHotel(hotelId: String): Result<List<Food>>
 }

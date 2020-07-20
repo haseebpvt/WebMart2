@@ -1,13 +1,11 @@
 package com.android.webmart.data.source
 
 import com.android.webmart.data.Result
-import com.android.webmart.data.model.Banner
-import com.android.webmart.data.model.Category
-import com.android.webmart.data.model.Hotel
-import com.android.webmart.data.model.Product
+import com.android.webmart.data.model.*
 import com.android.webmart.di.LocalAppDataSourceAnnotation
 import com.android.webmart.di.RemoteAppDataSourceAnnotation
 import com.android.webmart.util.fakedata.getFakeCategoryList
+import com.android.webmart.util.fakedata.getFakeFoodList
 import com.android.webmart.util.fakedata.getFakeHotelList
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -21,6 +19,10 @@ class DefaultAppRepository @Inject constructor(
 
     override fun test(): String {
         return "hello"
+    }
+
+    override suspend fun getFoodListFromHotel(hotelId: String): Result<List<Food>> {
+        return Result.Success(getFakeFoodList())
     }
 
     override suspend fun getHomeBanners(): Result<List<Banner>> {

@@ -1,6 +1,5 @@
 package com.android.webmart.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,9 +8,11 @@ import com.android.webmart.data.Result
 import com.android.webmart.data.model.Category
 import com.android.webmart.data.model.Hotel
 import com.android.webmart.data.source.AppRepository
+import dagger.hilt.android.scopes.ActivityScoped
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@ActivityScoped
 class HomeViewModel @Inject constructor(
     private val repository: AppRepository
 ) : ViewModel() {
@@ -39,6 +40,9 @@ class HomeViewModel @Inject constructor(
     }
     val hotelList: LiveData<List<Hotel>> = _hotelList
 
+    private val _actionOpenHotel = MutableLiveData<Unit>()
+    val actionOpenHotel: LiveData<Unit> = _actionOpenHotel
+
     /**
      * Called by Data Binding
      */
@@ -50,6 +54,6 @@ class HomeViewModel @Inject constructor(
      * Called by Data Binding
      */
     fun openHotel(hotelId: String) {
-
+        _actionOpenHotel.postValue(Unit)
     }
 }
