@@ -6,6 +6,7 @@ import com.android.webmart.di.LocalAppDataSourceAnnotation
 import com.android.webmart.di.RemoteAppDataSourceAnnotation
 import com.android.webmart.util.fakedata.getFakeCategoryList
 import com.android.webmart.util.fakedata.getFakeFoodList
+import com.android.webmart.util.fakedata.getFakeHotel
 import com.android.webmart.util.fakedata.getFakeHotelList
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,10 @@ class DefaultAppRepository @Inject constructor(
 
     override suspend fun getFoodListFromHotel(hotelId: String): Result<List<Food>> {
         return Result.Success(getFakeFoodList())
+    }
+
+    override suspend fun getHotelById(hotelId: String): Result<Hotel> {
+        return Result.Success(getFakeHotel())
     }
 
     override suspend fun getHomeBanners(): Result<List<Banner>> {

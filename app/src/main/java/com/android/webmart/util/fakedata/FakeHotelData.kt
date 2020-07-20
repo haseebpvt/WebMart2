@@ -20,3 +20,10 @@ fun getFakeHotelList(): List<Hotel> {
         one, two, three
     )
 }
+
+fun getFakeHotel(): Hotel {
+    val hotel1 =
+        "https://content3.jdmagicbox.com/comp/thiruvananthapuram/f8/0471px471.x471.171128021049.u5f8/catalogue/kerala-hotel-kochuveli-thiruvananthapuram-kerala-restaurants-89i62.jpg"
+    val one = Hotel("Hotel 1", "Restaurant", 4.5, hotel1)
+    return one
+}

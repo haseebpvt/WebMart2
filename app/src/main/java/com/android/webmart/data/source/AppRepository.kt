@@ -29,6 +29,11 @@ interface AppRepository {
     suspend fun getTopHotelsAndRestaurants(): Result<List<Hotel>>
 
     /**
+     * Get a hotel by it's hotelId
+     */
+    suspend fun getHotelById(hotelId: String): Result<Hotel>
+
+    /**
      * Get top products
      * Primary use case in Home screen
      */

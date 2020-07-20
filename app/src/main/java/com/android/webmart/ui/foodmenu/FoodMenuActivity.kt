@@ -24,6 +24,9 @@ class FoodMenuActivity : AppCompatActivity() {
 
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
+
+        viewModel.loadHotel("hotel1")
+        viewModel.loadFood("hotel1")
     }
 }
 
